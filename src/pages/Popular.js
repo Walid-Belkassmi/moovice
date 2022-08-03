@@ -16,7 +16,6 @@ const Popular = () => {
     );
     const response = await request.json();
     setMovies(response);
-    // console.log(response);
   };
   console.log(movies);
 
@@ -32,6 +31,7 @@ const Popular = () => {
           return (
             <Card
               key={movie.title}
+              id={movie.id}
               movieImage={movie.backdrop_path}
               movieTitle={movie.title}
               movieYear={movie.release_date}
