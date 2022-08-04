@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Card from "../components/Card";
+// import NavBar from "../components/NavBar"
+import { useEffect, useState } from "react";
+// import LoadingAnimation from "../components/LoadingAnimation"
 
 const Popular = () => {
-  const params = useParams();
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
@@ -12,12 +12,11 @@ const Popular = () => {
 
   const fetchData = async () => {
     const request = await fetch(
-      "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8af06974346546d4ea37dbcb45e39277"
+      "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8bf0372ddd1eb53a0909b7e274ee5973"
     );
     const response = await request.json();
     setMovies(response);
   };
-  console.log(movies);
 
   if (!movies) {
     return <p>Loading ...</p>;
@@ -26,18 +25,10 @@ const Popular = () => {
   return (
     <>
       <h1>Popular</h1>
-      <section className="d-flex flex-row flex-wrap">
+
+      <section className="d-flex flex-row flex-wrap justify-content-center">
         {movies.results.map((movie) => {
-          return (
-            <Card
-              key={movie.title}
-              id={movie.id}
-              movieImage={movie.backdrop_path}
-              movieTitle={movie.title}
-              movieYear={movie.release_date}
-              movieDescription={movie.overview}
-            />
-          );
+          return <Card movie={movie} />;
         })}
       </section>
     </>
