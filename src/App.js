@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 import Home from "./pages/Home";
 import Weekly from "./pages/Weekly";
 import Popular from "./pages/Popular";

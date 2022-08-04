@@ -28,7 +28,7 @@ const Popular = () => {
 
       <section className="d-flex flex-row flex-wrap justify-content-center">
         {movies.results.map((movie) => {
-          return <Card movie={movie} />;
+          return <Card key={movie.title} movie={movie} />;
         })}
       </section>
     </>

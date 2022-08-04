@@ -1,49 +1,39 @@
-const Card = (props) => {
-  const handleClickAddToFavorites = (currentId) => {
-    let favorites = [];
+const Card = ({ movie }) => {
+  const { title, release_date, poster_path, overview, id } = movie;
 
-    if (localStorage.favoriteIds) {
-      const localStorageIds = localStorage.getItem("favoriteIds");
-      favorites = JSON.parse(localStorageIds);
-    } else {
-      favorites = [];
+  const handleFavoriteClick = () => {
+    let stringifiedFavoriteIds = localStorage.getItem("favoriteIds");
+    let favoriteIds = [];
+
+    if (stringifiedFavoriteIds) {
+      favoriteIds = JSON.parse(stringifiedFavoriteIds);
     }
 
-    const checkId = favorites.find((id) => {
-      return id === currentId;
-    });
-
-    if (!checkId) {
-      favorites.push(currentId);
+    if (!favoriteIds.includes(id)) {
+      favoriteIds.push(id);
+      stringifiedFavoriteIds = JSON.stringify(favoriteIds);
+      localStorage.setItem("favoriteIds", stringifiedFavoriteIds);
     }
-
-    const stringifiedIds = JSON.stringify(favorites);
-    localStorage.setItem("favoriteIds", stringifiedIds);
   };
 
   return (
-    <>
-      <div className="card d-flex col-8 col-sm-5 col-md-4 col-lg-3 m-1">
+    <article className="p-2 col-12 col-md-4">
+      <div className="card h-100">
         <img
-          className="img-fluid align-self-center pt-2"
-          src={`https://image.tmdb.org/t/p/w300/${props.movie.backdrop_path}`}
-          alt={`background ${props.movie.title}`}
+          src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+          className="card-img-top"
+          alt={title}
         />
         <div className="card-body">
-          <h2 className="card-title text-capitalize">{props.movie.title}</h2>
-          <p className="card-text font-weight-bold">
-            {props.movie.release_date}
-          </p>
-          <p className="card-text">{props.movie.overview}</p>
-          <button
-            className="btn btn-primary"
-            onClick={() => handleClickAddToFavorites(props.movie.id)}
-          >
-            Add to favorites
-          </button>
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">Release date: {release_date}</p>
+          <p className="card-text">{overview}</p>
         </div>
+        <button className="btn btn-primary m-2" onClick={handleFavoriteClick}>
+          Add to favorites
+        </button>
       </div>
-    </>
+    </article>
   );
 };
 
