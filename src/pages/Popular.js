@@ -1,7 +1,5 @@
 import Card from "../components/Card";
-// import NavBar from "../components/NavBar"
 import { useEffect, useState } from "react";
-// import LoadingAnimation from "../components/LoadingAnimation"
 
 const Popular = () => {
   const [movies, setMovies] = useState(null);
