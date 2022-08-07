@@ -1,5 +1,6 @@
 body {
-  background-color: white;
+  background-image: url("./img/bg.jpeg");
+  background-position: center;
 }
 
 .link {

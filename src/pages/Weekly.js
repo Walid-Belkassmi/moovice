@@ -23,6 +23,10 @@ const Weekly = () => {
     setMovies(response.results);
   };
 
+  if (!movies) {
+    return <p>Loading ...</p>;
+  }
+
   console.log(moment());
   return (
     <>
