@@ -8,7 +8,7 @@ const Navbar = () => {
           Moovice
         </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler bg-warning"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
