@@ -1,6 +1,7 @@
 body {
   background-image: url("./img/bg.jpeg");
-  background-position: center;
+  /* background-position: center; */
+  background-position-y: px;
 }
 
 .link {
@@ -10,9 +11,15 @@ body {
 }
 
 h1 {
+  color: #ba181b;
   text-align: center;
   margin-top: 5px;
   margin-bottom: 20px;
+}
+
+h3 {
+  color: #ffd500;
+  margin-left: 10px;
 }
 
 .space {
@@ -21,8 +28,8 @@ h1 {
   align-items: center;
 }
 
-.navbar {
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 5px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 5px 5px rgba(0, 0, 0, 0);
+p.fav {
+  color: #ba181b;
+  margin-top: 10px;
+  font-size: 2em;
 }

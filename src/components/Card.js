@@ -17,7 +17,7 @@ const Card = ({ movie }) => {
   };
 
   return (
-    <article className="p-2 col-12 col-md-4">
+    <article className="p-2 col-12 col-md-3">
       <div className="card h-100">
         <img
           src={`https://image.tmdb.org/t/p/w300/${poster_path}`}

@@ -51,7 +51,7 @@ const Home = () => {
   return (
     <>
       <h1>Home</h1>
-      <section className="mt-2">
+      {/* <section className="mt-2">
         <h3 className="home-title">Latest</h3>
         <article className="movie-bar top-rated d-flex flex-row ">
           {!latest ? (
@@ -68,7 +68,7 @@ const Home = () => {
             })
           )}
         </article>
-      </section>
+      </section> */}
 
       {/* topRated */}
       <section className="mt-5">

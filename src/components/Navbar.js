@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand text-light fs-2">
           Moovice
         </Link>
         <button
@@ -24,22 +24,22 @@ const Navbar = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link text-warning fs-4">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/popular" className="nav-link">
+              <Link to="/popular" className="nav-link text-warning fs-4">
                 Popular
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/favorites" className="nav-link">
+              <Link to="/favorites" className="nav-link text-warning fs-4">
                 Favorites
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/weekly" className="nav-link">
+              <Link to="/weekly" className="nav-link text-warning fs-4">
                 Weekly
               </Link>
             </li>

@@ -69,7 +69,7 @@ const Favorites = () => {
   return (
     <>
       <h1>Favorites</h1>
-      {movies.length === 0 && <p className="text-center">Pas de favoris</p>}
+      {movies.length === 0 && <p className="text-center fav">No favorites</p>}
       <section className="d-flex flex-row flex-wrap justify-content-center">
         {movies.map((movie) => {
           return <Card key={movie.title} movie={movie} />;
